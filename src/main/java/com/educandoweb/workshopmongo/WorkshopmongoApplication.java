@@ -1,13 +1,13 @@
-package com.educandoweb.workshopmongodb;
+package com.educandoweb.workshopmongo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class WorkshopmongodbApplication {
+public class WorkshopmongoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(WorkshopmongodbApplication.class, args);
+		SpringApplication.run(WorkshopmongoApplication.class, args);
 	}
 
 }
