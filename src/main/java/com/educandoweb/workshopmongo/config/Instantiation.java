@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.educandoweb.workshopmongo.domain.Post;
 import com.educandoweb.workshopmongo.domain.User;
+import com.educandoweb.workshopmongo.dto.AuthorDTO;
 import com.educandoweb.workshopmongo.repositories.PostRepository;
 import com.educandoweb.workshopmongo.repositories.UserRepository;
 
@@ -35,10 +36,10 @@ public class Instantiation implements CommandLineRunner{
 		
 		useRepository.saveAll(Arrays.asList(maria,alex,bob));
 		
-		Post post1 = new Post(null, sdf.parse("21/03/2018"), "Partiu viagem", "Vou viajar para São Paulo. Abraços!", maria);
-		Post post2 = new Post(null, sdf.parse("23/03/2018"), "Bom dia", "Acordei feliz hoje!", maria);
-		Post post3 = new Post(null, sdf.parse("25/03/2018"), "Boa noite", "Faremos happyhour hoje as 17:00hs. Abraços!", alex);
-		Post post4 = new Post(null, sdf.parse("27/03/2018"), "Beleza Galera", "Faremos almoco de despedida para Jhon hoje. Abraços!", bob);
+		Post post1 = new Post(null, sdf.parse("21/03/2018"), "Partiu viagem", "Vou viajar para São Paulo. Abraços!",new AuthorDTO( maria));
+		Post post2 = new Post(null, sdf.parse("23/03/2018"), "Bom dia", "Acordei feliz hoje!", new AuthorDTO( maria));
+		Post post3 = new Post(null, sdf.parse("25/03/2018"), "Boa noite", "Faremos happyhour hoje as 17:00hs. Abraços!", new AuthorDTO( alex));
+		Post post4 = new Post(null, sdf.parse("27/03/2018"), "Beleza Galera", "Faremos almoco de despedida para Jhon hoje. Abraços!", new AuthorDTO( bob));
 		
 		postRepository.saveAll(Arrays.asList(post1,post2,post3,post4));
 	}
